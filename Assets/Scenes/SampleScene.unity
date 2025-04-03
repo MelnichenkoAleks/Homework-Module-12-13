@@ -1106,6 +1106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e91855b312fcfcc41b4367b8fd1cd654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wallet: {fileID: 2111284759}
+  _coin: {fileID: -8954186134621871624, guid: 9e4dc146f0e42b34b8e518698f79900f, type: 3}
   _timer: 15
   _timerText: {fileID: 1373710821}
   _victoryCoins: 5
@@ -2107,8 +2109,9 @@ GameObject:
   - component: {fileID: 2111284754}
   - component: {fileID: 2111284753}
   - component: {fileID: 2111284756}
-  - component: {fileID: 2111284758}
   - component: {fileID: 2111284757}
+  - component: {fileID: 2111284759}
+  - component: {fileID: 2111284760}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2241,10 +2244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ac4ac68f5a43c41bfa647b57c0ca70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 2111284758}
+  _rigibody: {fileID: 2111284756}
   _jumpPower: 5
   _speed: 1
---- !u!114 &2111284758
+--- !u!114 &2111284759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2253,10 +2256,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2111284751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ce784a15d9d6a46af4c3d0c0777f82, type: 3}
+  m_Script: {fileID: 11500000, guid: aefe45f9984cfc24b805d3b13c3cb95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigibody: {fileID: 2111284756}
+--- !u!114 &2111284760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111284751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a152bbe5ec506a4bb19493ea7202379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wallet: {fileID: 2111284759}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

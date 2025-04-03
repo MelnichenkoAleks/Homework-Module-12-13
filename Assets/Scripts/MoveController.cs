@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
-    [SerializeField] Player _player;
+    [SerializeField] private Rigidbody _rigibody;
+    public Rigidbody Rigidbody => _rigibody;
 
     [SerializeField] private float _jumpPower;
     [SerializeField] private float _speed;
@@ -18,23 +19,23 @@ public class MoveController : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.D))
-            _player.Rigidbody.AddForce(Vector3.right * _speed, ForceMode.Force);
+            Rigidbody.AddForce(Vector3.right * _speed, ForceMode.Force);
 
         if (Input.GetKey(KeyCode.A))
-            _player.Rigidbody.AddForce(Vector3.left * _speed, ForceMode.Force);
+            Rigidbody.AddForce(Vector3.left * _speed, ForceMode.Force);
 
         if (Input.GetKey(KeyCode.W))
-            _player.Rigidbody.AddForce(Vector3.forward * _speed, ForceMode.Force);
+            Rigidbody.AddForce(Vector3.forward * _speed, ForceMode.Force);
 
         if (Input.GetKey(KeyCode.S))
-            _player.Rigidbody.AddForce(Vector3.back * _speed, ForceMode.Force);
+            Rigidbody.AddForce(Vector3.back * _speed, ForceMode.Force);
     }
 
     private void FixedUpdate()
     {
         if (_jumpRequest)
         {
-            _player.Rigidbody.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
+            Rigidbody.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
             _jumpRequest = false;
         }
     }

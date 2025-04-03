@@ -4,20 +4,21 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private Wallet _wallet;
+    [SerializeField] private Coin _coin;
+
     [SerializeField] private float _timer;
+    private float _redTimer = 5f;
 
     [SerializeField] private TMP_Text _timerText;
 
     [SerializeField] private int _victoryCoins;
-    private int _coins;
 
     private bool _isGameOver;
 
     private void Awake()
     {
-        Player player = GetComponent<Player>();
         _isGameOver = false;
-        _coins = 0;
         Time.timeScale = 1;
     }
 
@@ -35,10 +36,10 @@ public class GameController : MonoBehaviour
 
         _timer -= Time.deltaTime;
 
-        if (_coins == _victoryCoins)
+        if (_wallet.Count == _victoryCoins)
             WinGame();
 
-        if (_timer < 5)
+        if (_timer < _redTimer)
             _timerText.color = Color.red;
 
         if (_timer <= 0)
@@ -46,13 +47,6 @@ public class GameController : MonoBehaviour
             _timer = 0;
             LoseGame();
         }
-    }
-
-    public void AddCoin(int value)
-    {
-        _coins += value;
-
-        Debug.Log(_coins);
     }
 
     private void WinGame()
